@@ -10,7 +10,7 @@ import aiomysql
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import datetime
 
-WEB_APP_URL = 'https://astoundingly-growing-octopus.cloudpub.ru/'  # адрес из CloudPub
+WEB_APP_URL = ''  # адрес из CloudPub
 scheduler = AsyncIOScheduler()
 
 async def on_startup(app):
@@ -583,3 +583,4 @@ app.add_handler(CallbackQueryHandler(inline_callback_handler))
 
 
 app.run_polling() 
+
