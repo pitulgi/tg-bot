@@ -20,7 +20,7 @@ async def on_startup(app):
         scheduler.start()
 
 app = ApplicationBuilder()\
-    .token('7719370231:AAH9COq99MsnvkJm4QUrDQs3DBK_7nfnpJM')\
+    .token('')\
     .post_init(on_startup)\
     .build()
 
@@ -574,11 +574,12 @@ async def catalog(update, context):
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text('Нажмите, чтобы открыть:', reply_markup=reply_markup)
 
-app = ApplicationBuilder().token('7719370231:AAH9COq99MsnvkJm4QUrDQs3DBK_7nfnpJM').post_init(on_startup).build()
+app = ApplicationBuilder().token('').post_init(on_startup).build()
 
 app.add_handler(CommandHandler('start', start))
 app.add_handler(MessageHandler(filters.TEXT, reply_handler))
 app.add_handler(CommandHandler('catalog', catalog))
 app.add_handler(CallbackQueryHandler(inline_callback_handler))
+
 
 app.run_polling() 
